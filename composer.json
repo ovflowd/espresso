@@ -1,6 +1,6 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
+    "name": "sant0ro/espreso",
+    "description": "The OpenSource Sulake's Retro Housekeeping",
     "keywords": ["framework", "laravel", "lumen"],
     "license": "MIT",
     "type": "project",
