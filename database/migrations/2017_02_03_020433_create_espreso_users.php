@@ -20,7 +20,7 @@ class CreateEspresoUsers extends Migration
             $table->string('email');
             $table->unsignedInteger('rank');
 
-            $table->string('remember_token', 100)->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
 
