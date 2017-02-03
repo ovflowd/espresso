@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Expreso',
+    'name' => 'Espreso',
 
     /*
     |--------------------------------------------------------------------------
@@ -169,7 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
 
         /*
-         * Application Service Providers...
+         * Application Service Providers...  
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
