@@ -11,8 +11,8 @@
 |
 */
 
-// Auth
-Auth::routes();
+/* Authentication */
+Route::get('/', 'AuthController@login');
+Route::post('/', 'AuthController@authenticate');
 
-// HomeController
-Route::get('/', 'HomeController@index');
+Route::get('/dashboard', 'PagesController@dashboard');
