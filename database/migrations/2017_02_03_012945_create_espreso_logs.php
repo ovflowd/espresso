@@ -18,6 +18,7 @@ class CreateEspresoLogs extends Migration
             $table->string('user_id')->nullable();
             $table->ipAddress('address');
             $table->text('request');
+            $table->timestamps();
         });
     }
 
