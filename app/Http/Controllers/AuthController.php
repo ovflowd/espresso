@@ -46,4 +46,16 @@ class AuthController extends Controller
             return redirect()->back();
         }
     }
+
+    /**
+     * Destroy user's current session
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy(Request $request)
+    {
+        $this->log->create($request, "Signed out of the Houskeeping");
+        Auth::logout();
+        return redirect()->intended('/');
+    }
 }
