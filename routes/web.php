@@ -11,8 +11,12 @@
 |
 */
 
-/* Authentication */
-Route::get('/', 'AuthController@login');
-Route::post('/', 'AuthController@authenticate');
+Route::group(['middleware' => 'guest'], function() {
+    Route::get('/', 'AuthController@login');
+    Route::post('/', 'AuthController@authenticate');
+});
 
-Route::get('/dashboard', 'PagesController@dashboard');
+Route::group(['middleware' => 'user'], function() {
+    Route::get('/logout', 'AuthController@destroy');
+    Route::get('/dashboard', 'PagesController@dashboard');
+});
