@@ -19,8 +19,8 @@ class CreateEspresoRoles extends Migration
         });
 
         DB::table('espreso_roles')->insert([
-            'id' => 1,
-            'name' => 'User'
+            ['id' => 1, 'name' => 'User'],
+            ['id' => 4, 'name' => 'System Administrator'],
         ]);
     }
 

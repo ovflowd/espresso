@@ -55,7 +55,7 @@
 
 <ul>
 <li>Claudio aka saamus</li>
-<li>John aka Kylon</li>
+<li><s>John aka Kylon</s></li>
 <li>Mike aka CineXMike</li>
 <li>Jeremy aka Emetophobic</li>
 </ul>
