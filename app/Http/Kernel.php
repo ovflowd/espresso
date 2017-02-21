@@ -51,6 +51,8 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'guest' => \App\Http\Middleware\Auth\Guest::class,
-        'user' => \App\Http\Middleware\Auth\User::class
+        'user' => \App\Http\Middleware\Auth\User::class,
+        'nav_log' => \App\Http\Middleware\Logging\Navigation::class,
+        'perm_check' => \App\Http\Middleware\Permissions\HasPermission::class
     ];
 }

@@ -20,7 +20,7 @@ class Guest
     {
         if(Auth::check())
         {
-            $this->log->create($request, "Tried to access a guest-only route (" . $request->path() . ")");
+            $this->log->create($request, "PERM", "Tried to access a guest-only route (" . $request->path() . ")");
             return redirect()->intended('/dashboard');
         }
 

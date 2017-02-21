@@ -35,13 +35,14 @@ class AuthController extends Controller
 
         if(Auth::attempt(['username' => $request->input('username'), 'password' => $request->input('password')]))
         {
-            $this->log->create($request, "Successfully logged in to the Housekeeping");
+            $request->request->add(['required_perm' => 'login']);
+            $this->log->create($request, "AUTH", "Successfully logged in to the Housekeeping");
             return redirect()->intended('dashboard');
         }
 
         else
         {
-            $this->log->create($request, "Failed login attempt");
+            $this->log->create($request, "AUTH", "Failed login attempt");
             $request->session()->flash('error', 'Wrong username/password combination');
             return redirect()->back();
         }
@@ -54,8 +55,9 @@ class AuthController extends Controller
      */
     public function destroy(Request $request)
     {
-        $this->log->create($request, "Signed out of the Houskeeping");
+        $this->log->create($request, "AUTH", "Signed out of the Housekeeping");
         Auth::logout();
+        $request->session()->flash('logged_out', 'logged_out');
         return redirect()->intended('/');
     }
 }

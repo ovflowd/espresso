@@ -14,11 +14,12 @@ class LogsController extends Controller
      * @param Request $request
      * @param $data
      */
-    public function create(Request $request, $data)
+    public function create(Request $request, $type, $data)
     {
         $log = new Log();
 
         $log->user_id = $request->user()->id ?? 0;
+        $log->type = $type;
         $log->address = $request->ip();
         $log->request = $data;
 

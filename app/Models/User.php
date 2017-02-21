@@ -28,4 +28,25 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Return specific user information from it's user ID
+     * Only use this inside template files
+     * @param $uid
+     * @param $data
+     * @return mixed
+     */
+    public static function fetchInfo($uid, $data)
+    {
+        if($uid == 0)
+        {
+            return "Guest";
+        }
+
+        else
+        {
+            $user = User::where('id', $uid)->first();
+            return $user->$data;
+        }
+    }
 }

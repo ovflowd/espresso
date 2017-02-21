@@ -20,7 +20,7 @@ class User
     {
         if(Auth::guest())
         {
-            $this->log->create($request, "Tried to access a user-only resource without being authenticated (" . $request->path() . ")");
+            $this->log->create($request, "PERM", "Tried to access a user-only resource without being authenticated (" . $request->path() . ")");
             return redirect()->intended('/');
         }
 

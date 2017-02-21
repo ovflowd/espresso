@@ -1,86 +1,65 @@
-@extends("layouts.header")
+@extends('layouts.login')
 
-@section("content")
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <div align="center">
-            <div style="width:500px">
-                <div class="outerdiv" id="global-outerdiv"><!-- OUTERDIV -->
-                    <table cellpadding="0" cellspacing="8" width="100%" id="tablewrap">
-                        <tr>
-                            <td id="rightblock">
-                                <div>
-                                    <form id="loginform" action="/" method="POST">
-                                        <input type="hidden" name="qstring" value="" />
-                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                            <tr>
-                                                <td width="200" class="tablerow1" valign="top" style="border:0px;width:200px">
-                                                    <div style="text-align:center;padding-top:20px">
-                                                        <img src="/images/acp-login-lock.gif" alt="Housekeeping" border="0" />
-                                                    </div>
-                                                    <br />
-                                                    <div class="desctext" style="font-size:10px">
-                                                        <div align="center"><strong>Welcome to Housekeeping</strong></div>
-                                                        <br />
-                                                        <div style="font-size:9px;color:gray">Please login with your valid moderator/administrator credentials. This service is monitored 24/7.<br /><br />If you have forgot your password, please use the <a href="../forgot.php">recovery tool</a> or contact your system administrator.</div>
-                                                    </div>
-                                                </td>
-                                                <td width="300" style="width:300px" valign="top">
-                                                    <table width="100%" cellpadding="5" cellspacing="0" border="0">
-                                                        <tr>
-                                                            <td colspan="2" align="center">
-                                                                <br />
-                                                                <img src="/images/espreso-logo.gif" alt="Espreso">
-                                                                <div style="font-weight:bold;color:red">
-                                                                    @if(Session::has('error'))
-                                                                        {{ session('error') }}
-                                                                    @endif
-                                                                </div><br />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="right">
-                                                                <strong>Username</strong>
-                                                            </td>
-                                                            <td>
-                                                                <input style="border:1px solid #AAA" type="text" size="20" name="username" id="namefield" value="" />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="right">
-                                                                <strong>Password</strong>
-                                                            </td>
-                                                            <td>
-                                                                <input style="border:1px solid #AAA" type="password" size="20" name="password" value="" />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="2" align="center">
-                                                                <input type="submit" style="border:1px solid #AAA" value="Sign in" />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="2">
-                                                                <br />
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        {{ csrf_field() }}
-                                    </form>
+@section('content')
+    <div class="login">
 
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div><!-- / OUTERDIV -->
+        <!-- Login -->
+        <div class="login__block toggled" id="l-login">
+            <div class="login__block__header">
+                <i class="zmdi zmdi-account-circle"></i>
+                Sign in to continue
 
+                <div class="actions login__block__actions">
+                    <div class="dropdown">
+                        <a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
+
+                        <ul class="dropdown-menu pull-right">
+                            <li><a data-block="#l-forget-password" href="">Forgot password?</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login__block__body">
+                <form action="/" method="POST">
+                    <div class="form-group form-group--float form-group--centered form-group--centered">
+                        <input type="text" name="username" class="form-control">
+                        <label>Username</label>
+                        <i class="form-group__bar"></i>
+                    </div>
+
+                    <div class="form-group form-group--float form-group--centered form-group--centered">
+                        <input type="password" name="password" class="form-control">
+                        <label>Password</label>
+                        <i class="form-group__bar"></i>
+                    </div>
+
+                    {{ csrf_field() }}
+                    <button class="btn btn--light btn--icon-text m-t-15"><i class="zmdi zmdi-lock"></i> Sign in</button>
+                </form>
             </div>
         </div>
+
+        <!-- Forgot Password -->
+        <div class="login__block" id="l-forget-password">
+            <div class="login__block__header palette-Purple bg">
+                <i class="zmdi zmdi-account-circle"></i>
+                Forgot Password?
+
+                <div class="actions login__block__actions">
+                    <div class="dropdown">
+                        <a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
+
+                        <ul class="dropdown-menu pull-right">
+                            <li><a data-block="#l-login" href="">Already have an account?</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login__block__body">
+                <p class="m-t-30">If you forgot your password, please contact your system administrator</p>
+            </div>
+        </div>
+    </div>
 @stop
