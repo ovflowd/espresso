@@ -2,12 +2,24 @@
 
 namespace App\Exceptions;
 
+use App\Http\Controllers\LogsController as Logs;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
+
+    private $log;
+
+    public function __construct(Container $container, Logs $logsManager)
+    {
+        parent::__construct($container);
+        $this->log = $logsManager;
+    }
+
     /**
      * A list of the exception types that should not be reported.
      *
@@ -44,6 +56,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if($exception instanceof NotFoundHttpException)
+        {
+            $this->log->create($request, 'ERROR', 'HTTP Error 404 encountered with route: ' . $request->path());
+            return response()->view('errors.404', [], 404);
+        }
+
         return parent::render($request, $exception);
     }
 
