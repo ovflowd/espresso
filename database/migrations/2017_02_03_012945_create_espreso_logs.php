@@ -16,6 +16,7 @@ class CreateEspresoLogs extends Migration
         Schema::create('espreso_logs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('user_id')->nullable();
+            $table->string('type');
             $table->ipAddress('address');
             $table->text('request');
             $table->timestamps();
