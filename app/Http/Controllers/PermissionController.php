@@ -12,7 +12,6 @@ class PermissionController extends Controller
 
     /**
      * Check if a user object has the specified permission
-     * If your permission check doesn't fall inside a template or view, inject this in your class
      * @param User $user
      * @param $permission
      * @return bool
@@ -30,5 +29,19 @@ class PermissionController extends Controller
         {
             return false;
         }
+    }
+
+    /**
+     * Update permission
+     * @param $perm_string
+     * @param $rid
+     */
+    public function update($perm_string, $rid)
+    {
+        $perm = Permission::where('perm_string', $perm_string)->firstOrFail()->assigned_roles;
+
+        Permission::where('perm_string', $perm_string)->update([
+            'assigned_roles' => $perm . ';' . $rid,
+        ]);
     }
 }
