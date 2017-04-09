@@ -16,6 +16,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Espreso version
+    |--------------------------------------------------------------------------
+    |
+    | This value is the version of Espreso. This value is used for comparison
+    | with the latest GitHub repo release version. So it can notify you in the
+    | about page that a new version is available. !! DO NOT CHANGE THIS VALUE !!
+    */
+
+    'version' => '1.0.0',
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
     |
