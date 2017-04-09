@@ -7,8 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ $page_title }} - Espreso Housekeeping</title>
 
-        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
 
         <link href="/css/animate.min.css" rel="stylesheet">
         <link href="/css/material-design-iconic-font.min.css" rel="stylesheet">
@@ -126,7 +126,7 @@
                     <li><a href="/dashboard" target="_blank">Dashboard</a></li>
                     <li><a href="https://github.com/sant0ro/espreso/issues/new?labels=bug" target="_blank">Report a bug</a></li>
                     <li><a href="https://github.com/sant0ro/espreso/issues/new?title=Feature%20request:&body=What%20do%20you%20want%20to%20see%20in%20Espreso?&labels=feature" target="_blank">Request feature</a></li>
-                    <li><a href="/about" target="_blank">About Espreso</a></li>
+                    <li><a href="/about">About Espreso</a></li>
                 </ul>
             </footer>
         </section>
