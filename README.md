@@ -1,6 +1,5 @@
 #### PLEASE DON'T USE ESPRESO, ISN'T READY TO BE USED AND UNDER DEVELOPMENT
 
-<article class="markdown-body entry-content" itemprop="text"><p><a href="https://camo.githubusercontent.com/ab602edc01d28c8e54d39658427e02eb26753b3f/687474703a2f2f7777772e686162626372617a792e6e65742f7265736f75726365732f666f6e74732f3132332f6573707265736f2e676966" target="_blank"><img src="https://camo.githubusercontent.com/ab602edc01d28c8e54d39658427e02eb26753b3f/687474703a2f2f7777772e686162626372617a792e6e65742f7265736f75726365732f666f6e74732f3132332f6573707265736f2e676966" alt="" data-canonical-src="http://www.habbcrazy.net/resources/fonts/123/espreso.gif" style="max-width:100%;"></a>
 <br><sup>espreso the Sulake's Retro Housekeeping</sup></p>
 
 <p><a href="/sant0ro/espreso/blob/master"><img src="https://camo.githubusercontent.com/b0224997019dec4e51d692c722ea9bee2818c837/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6d6173686170652f6170697374617475732e737667" alt="license" data-canonical-src="https://img.shields.io/github/license/mashape/apistatus.svg" style="max-width:100%;"></a></p>
